@@ -23,5 +23,12 @@
 }
 
 body{
-    
+    background-color: var(--main);
+}
+
+header{
+    background-color: var(--background-header);
+    display: flex;
+    width: 100vw;
+    height: 436px;
 }
