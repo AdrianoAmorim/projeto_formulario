@@ -1,5 +1,12 @@
 @charset "utf-8";
-
+@font-face {
+    font-family: Poppins;
+    src: url(../fonts/Poppins.ttf);
+}
+@font-face {
+    font-family: Staatliches;
+    src: url(../fonts/Staatliches.ttf);
+}
 *{
     margin: 0;
     padding: 0;
