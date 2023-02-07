@@ -1,34 +1,62 @@
 @charset "utf-8";
+
 @font-face {
     font-family: Poppins;
     src: url(../fonts/Poppins.ttf);
 }
+
 @font-face {
     font-family: Staatliches;
     src: url(../fonts/Staatliches.ttf);
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-:root{
+
+:root {
     --background-header: #535971;
     --background-btn: #FF5374;
-    --background-input:#FAFAFC;
-    --border-input:#E6E6F0;
-    --main:#EFEFEF;
-    --label-input:#4E4958;
-    --info-label:#C1BCCC;
+    --background-input: #FAFAFC;
+    --border-input: #E6E6F0;
+    --main: #EFEFEF;
+    --label-input: #4E4958;
+    --info-label: #C1BCCC;
 }
 
-body{
+body {
     background-color: var(--main);
 }
 
-header{
+header {
     background-color: var(--background-header);
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
     height: 436px;
+}
+
+.boxHeader {
+    width: 100%;
+    max-width: 750px;
+}
+
+.boxHeader h1 {
+    font-family: Staatliches;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 60px;
+    color: #fff;
+    margin-bottom: 18px;
+}
+
+.boxHeader p {
+    font-family: Poppins;
+    font-weight: 400;
+font-size: 20px;
+line-height: 30px;
+color:#fff;
 }
