@@ -16,50 +16,88 @@
     </header>
     <main>
         <section class="containerForm">
-            <h3 class="containerForm__titulo" style="margin-top: 0;">INFORMAÇÕES PESSOAIS</h3>
+            <h3 id="primeiroh3">INFORMAÇÕES PESSOAIS</h3>
             <hr class="containerForm__linha">
             <div class="containerForm__infoPessoal">
                 <div class="infoPessoal__nomeComp">
                     <div class="infoPessoal__nome">
-                        <p class="containerForm__lblInpunt">Nome</p>
+                        <p>Nome</p>
                         <input class="containerForm__inpt" type="text" id="nome">
                     </div>
                     <div class="infoPessoal__sobreNome">
-                        <p class="containerForm__lblInpunt">Sobrenome</p>
+                        <p>Sobrenome</p>
                         <input class="containerForm__inpt" type="text" id="sobreNome">
                     </div>
                 </div>
                 <div class="infoPessoal__email">
                     <span class="infoPessoal__email__span">
-                        <p class="containerForm__lblInpunt">Email</p> 
+                        <p>Email</p> 
                         <p class="legenda">(digite um email válido)</p>
                     </span>
                     <input class="containerForm__inpt" type="text" id="email">
                 </div>
                 <div class="infoPessoal__senha">
-                    <p class="containerForm__lblInpunt">Senha</p>
+                    <p>Senha</p>
                     <input class="containerForm__inpt" type="text" id="senha">
                 </div>
             </div>
             
             <div class="containerForm__mentor">
-                <h3 class="containerForm__titulo">INFORMAÇÕES DO MENTOR</h3>
+                <h3>INFORMAÇÕES DO MENTOR</h3>
                 <hr class="containerForm__linha">
                 <span class="mentor__span">
-                    <p class="containerForm__lblInpunt">Nome do seu mentor</p> 
+                    <p>Nome do seu mentor</p> 
                     <p class="legenda">(só o primeiro nome)</p>
                 </span>
                 <input class="containerForm__inpt" type="text" id="mentorName">
             </div>
             
             <div class="continerForm__horarios">
-                <h3 class="containerForm__titulo">SEUS HORÁRIOS DISPONÍVEIS</h3>
+                <h3>SEUS HORÁRIOS DISPONÍVEIS</h3>
                 <hr class="containerForm__linha">
+                <h4>PRIMEIRA MENTORIA</h4>
                 <div class="horarios__gridBlock">
-                    
+                    <div class="horarios__gridBlock__data">
+                        <div class="horarios__gridBlock__data--flex">
+                            <p>Data</p>
+                            <p class="legenda">(DD/MM/AAAA)</p>
+                        </div>
+                        <input type="text" class="containerForm__inpt">
+                    </div>
+                    <div class="horarios__gridBlock__das">
+                        <p>das</p>
+                        <input type="text" class="containerForm__inpt">
+                    </div>
+                    <div class="horarios__gridBlock__ate">
+                        <p>até</p>
+                        <input type="text" class="containerForm__inpt">
+                    </div>
                 </div>
+
+                <h4>SEGUNDA MENTORIA</h4>
+                <div class="horarios__gridBlock">
+                    <div class="horarios__gridBlock__data">
+                        <div class="horarios__gridBlock__data--flex">
+                            <p>Data</p>
+                            <p class="legenda">(DD/MM/AAAA)</p>
+                        </div>
+                        <input type="text" class="containerForm__inpt">
+                    </div>
+                    <div class="horarios__gridBlock__das">
+                        <p>das</p>
+                        <input type="text" class="containerForm__inpt">
+                    </div>
+                    <div class="horarios__gridBlock__ate">
+                        <p>até</p>
+                        <input type="text" class="containerForm__inpt">
+                    </div>
+                </div>
+            </div>
+            <div class="buttonArea">
+                <button>SALVAR</button>
             </div>
         </section>
     </main>
+
 </body>
 </html>

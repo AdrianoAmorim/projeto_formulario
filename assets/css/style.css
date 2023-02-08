@@ -28,6 +28,8 @@
 
 body {
     background-color: var(--main);
+    height: 100vh;
+    width: 100vw;
 }
 
 /*HEADER*/
@@ -62,11 +64,10 @@ header {
     color: #fff;
 }
 
-/*MAIN*/
 main {
     display: flex;
     justify-content: center;
-    width: 100vw;
+
 }
 
 /*FORMULARIO*/
@@ -80,7 +81,7 @@ main {
     border-radius: 20px 20px 0 0;
 }
 
-.containerForm__titulo {
+h3{
     font-family: 'Staatliches';
     font-style: normal;
     font-weight: 400;
@@ -89,6 +90,17 @@ main {
     margin-top: 30px;
     color: var(--background-header);
 }
+#primeiroh3{
+    margin-top: 0;
+}
+
+h4{
+    color: var(--background-header);
+    font-family: 'Staatliches';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.3rem;
+}
 
 .containerForm__linha {
     border: 1px solid var(--border-input);
@@ -96,18 +108,13 @@ main {
     margin-bottom: 36px;
 }
 
-.containerForm .infoPessoal__nomeComp {
+.containerForm .infoPessoal__nomeComp{
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
 
-.infoPessoal__email__span{
-    display: flex;
-    align-items: center;
-}
-
-.mentor__span{
+.infoPessoal__email__span, .mentor__span, .primeiraMentoria__span{
     display: flex;
     align-items: center;
 }
@@ -118,9 +125,7 @@ main {
     font-size: 0.9rem;
 }
 
-
-
-.containerForm__lblInpunt {
+p {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
@@ -145,10 +150,29 @@ main {
 
 .infoPessoal__nomeComp .infoPessoal__nome {
     flex: 1;
-
     margin-right: 22px;
 }
 
 .infoPessoal__nomeComp .infoPessoal__sobreNome {
     flex: 1;
+}
+
+.horarios__gridBlock{
+    display: grid;
+    grid-template-columns: 2.25fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    column-gap: 10px;
+    max-height: 130px;
+}
+
+.horarios__gridBlock__data{
+    padding-right: 20px;
+}
+.horarios__gridBlock__data--flex{
+    display: flex;
+    align-items: center;
+}
+
+.buttonArea{
+
 }
