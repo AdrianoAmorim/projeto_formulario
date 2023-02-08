@@ -28,6 +28,8 @@
 
 body {
     background-color: var(--main);
+    height: 100vh;
+    width: 100vw;
 }
 
 /*HEADER*/
@@ -37,7 +39,7 @@ header {
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 436px;
+    height: 45vh;
 }
 
 .boxHeader {
@@ -48,7 +50,7 @@ header {
 .boxHeader h1 {
     font-family: Staatliches;
     font-weight: 400;
-    font-size: 48px;
+    font-size: 3rem;
     line-height: 60px;
     color: #fff;
     margin-bottom: 18px;
@@ -57,16 +59,15 @@ header {
 .boxHeader p {
     font-family: Poppins;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 1.25rem;
     line-height: 30px;
     color: #fff;
 }
 
-/*MAIN*/
 main {
     display: flex;
     justify-content: center;
-    width: 100vw;
+
 }
 
 /*FORMULARIO*/
@@ -80,14 +81,25 @@ main {
     border-radius: 20px 20px 0 0;
 }
 
-.containerForm__titulo {
+h3{
     font-family: 'Staatliches';
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 34px;
     margin-top: 30px;
     color: var(--background-header);
+}
+#primeiroh3{
+    margin-top: 0;
+}
+
+h4{
+    color: var(--background-header);
+    font-family: 'Staatliches';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.3rem;
 }
 
 .containerForm__linha {
@@ -96,18 +108,28 @@ main {
     margin-bottom: 36px;
 }
 
-.containerForm .infoPessoal__nomeComp {
+.containerForm .infoPessoal__nomeComp{
     display: flex;
     justify-content: space-between;
-    align-items: center;
     width: 100%;
 }
 
-.containerForm__lblInpunt {
+.infoPessoal__email__span, .mentor__span, .primeiraMentoria__span{
+    display: flex;
+    align-items: center;
+}
+
+.legenda{
+    margin: 6px 0 0 7px;
+    color: #C1BCCC;
+    font-size: 0.9rem;
+}
+
+p {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 1rem;
     line-height: 24px;
     color: #4E4958;
     margin-bottom: 8px;
@@ -122,16 +144,35 @@ main {
     height: 56px;
     outline: 0;
     color: var(--background-header);
-    font-size: 18px;
+    font-size: 1rem;
     padding-inline-start: 10px;
 }
 
 .infoPessoal__nomeComp .infoPessoal__nome {
     flex: 1;
-
     margin-right: 22px;
 }
 
 .infoPessoal__nomeComp .infoPessoal__sobreNome {
     flex: 1;
+}
+
+.horarios__gridBlock{
+    display: grid;
+    grid-template-columns: 2.25fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    column-gap: 10px;
+    max-height: 130px;
+}
+
+.horarios__gridBlock__data{
+    padding-right: 20px;
+}
+.horarios__gridBlock__data--flex{
+    display: flex;
+    align-items: center;
+}
+
+.buttonArea{
+
 }
