@@ -18,9 +18,10 @@ const page = document.querySelector('main')
 //OBJETO QUE SERA MONTADO NA FUNCAO SETDADOS(),COM OS DADOS DA DOM
 var objForms = {}
 
-//FUNCAO QUE PEGA OS VALORES DOS INPUTS E SETA NA VARIAVEL (oBJETO)
 
 const nextpage = () => {
+  //CHAMEI AQUI A FUNCAO P PEGA OS VALORES 
+  getStorage();
   let header2 = document.getElementById('header2');
   let page2 = document.getElementById('page2');
   header.classList.toggle('ocultar');
@@ -29,8 +30,8 @@ const nextpage = () => {
   page2.classList.toggle('ocultar')
 
 }
-
-const setDados = () => {
+//FUNCAO QUE PEGA OS VALORES DOS INPUTS E SETA NA VARIAVEL (oBJETO)
+const setDadosObj = () => {
   objForms.nome = inptNome.value;
   objForms.sobreNome = inptSobreNome.value
   objForms.email = inptEmail.value;
@@ -42,7 +43,7 @@ const setDados = () => {
   objForms.segundaDataMentoria = inptSegundaDataMentoria.value;
   objForms.segundaDataDas = inptSegundaDataDas.value;
   objForms.segundaDataAte = inptSegundaDataAte.value;
-
+  setStorage();
   nextpage();
 }
 const validarCampos = () => {
@@ -50,7 +51,6 @@ const validarCampos = () => {
   let inputs = document.querySelectorAll("input");
   //USADO PARA CONTROLAR QUANTOS CAMPOS FORAM PREENCHIDOS
   let countInpt = 0;
-
   //PERCORRE O ARRAY COM TODOS OS INPUTS
   //O FOREACH ELE RECEBE COMO PARAMETRO UM ITEM DE CADA VEZ DO ARRAY.. 
   //A CADA ITERACAO DO FOREACH ELE USA UM ITEM DO ARRAY...
@@ -63,12 +63,31 @@ const validarCampos = () => {
   });
   //AQUI TESTA SE OS 11 CAMPOS ESTAO PREENCHIDOS, SE ESTIVER SET OS DADOS, SE NAO MANDA O ALERT 
   if(countInpt == 11){
-    setDados();
+    setDadosObj();
   }else{
     alert("Porfavor, Preencha todos os Campos!- ;)");
   }
  
 }
+
+//FUNCAO QUE IRAR SETAR O OBJETO COM TODAS AS INFORMACOES NO LOCALSTORAGE 
+const setStorage = ()=>{
+  //a funcao JSON..., e so p tranformar obj em String. 
+  // mas a forma de setar os valores no LocalStorage e a mesma
+  localStorage.setItem("obj",JSON.stringify(objForms));
+}
+
+//FUNCAO QUE PEGA O VALOR DO LOCALSTORAGE
+const getStorage = ()=>{
+
+  //pega o valor do localstorage (como string)
+ let valueReturn = localStorage.getItem("obj");
+ //faz a conversao novamente para OBJETO
+ let obj = JSON.parse(valueReturn);
+ //AQUI VC SETA OS VALORES NOS INPUTS COMO SERIA UM RETORNO DE UMA API...
+ console.log(obj)
+}
+
 
 //CRIANDO OS EVENTOS
 btnSalvar.addEventListener("click", () => {
