@@ -39,7 +39,7 @@ header {
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height:436px;
+    height: 436px;
 }
 
 .boxHeader {
@@ -66,22 +66,23 @@ header {
 
 main {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 
 }
 
 /*FORMULARIO*/
 .containerForm {
-    position: absolute;
-    top: 337px;
+    margin-top: -90px;
     background-color: #fff;
     width: 100%;
     max-width: 750px;
-    padding: 65px;
+    padding: 65px 65px 0 65px;
     border-radius: 20px 20px 0 0;
 }
 
-h3{
+h3 {
     font-family: 'Staatliches';
     font-style: normal;
     font-weight: 400;
@@ -90,11 +91,12 @@ h3{
     margin-top: 30px;
     color: var(--background-header);
 }
-#primeiroh3{
+
+#primeiroh3 {
     margin-top: 0;
 }
 
-h4{
+h4 {
     color: var(--background-header);
     font-family: 'Staatliches';
     font-style: normal;
@@ -108,18 +110,20 @@ h4{
     margin-bottom: 36px;
 }
 
-.containerForm .infoPessoal__nomeComp{
+.containerForm .infoPessoal__nomeComp {
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
 
-.infoPessoal__email__span, .mentor__span, .primeiraMentoria__span{
+.infoPessoal__email__span,
+.mentor__span,
+.primeiraMentoria__span {
     display: flex;
     align-items: center;
 }
 
-.legenda{
+.legenda {
     margin: 6px 0 0 7px;
     color: #C1BCCC;
     font-size: 0.9rem;
@@ -157,7 +161,7 @@ p {
     flex: 1;
 }
 
-.horarios__gridBlock{
+.horarios__gridBlock {
     display: grid;
     grid-template-columns: 2.25fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -165,14 +169,38 @@ p {
     max-height: 130px;
 }
 
-.horarios__gridBlock__data{
+.horarios__gridBlock__data {
     padding-right: 20px;
 }
-.horarios__gridBlock__data--flex{
+
+.horarios__gridBlock__data--flex {
     display: flex;
     align-items: center;
 }
 
-.buttonArea{
-
+/*AREA DO BOTAO SALVAR*/
+.buttonArea {
+    background-color: var(--background-header);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 750px;
+    margin-bottom: 90px;
+    padding: 52px 70px;
+    border-radius: 0 0 20px 20px;
+}
+.buttonArea button{
+    font-family: Staatliches ;
+    font-size: 1.2rem;
+    width: 100%;
+    height: 3.5rem;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--background-btn);
+    transition: background-color .3s ease-in-out;
+}
+.buttonArea button:hover, .buttonArea button:active{
+    background-color: #f87992 ;
+    cursor: pointer;
 }
