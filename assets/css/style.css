@@ -198,4 +198,9 @@ p {
     border: none;
     border-radius: 20px;
     background-color: var(--background-btn);
+    transition: background-color .3s ease-in-out;
+}
+.buttonArea button:hover, .buttonArea button:active{
+    background-color: #f87992 ;
+    cursor: pointer;
 }
