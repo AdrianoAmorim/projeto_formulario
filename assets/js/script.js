@@ -12,10 +12,24 @@ const inptSegundaDataDas = document.getElementById("segundaDataDas");
 const inptSegundaDataAte = document.getElementById("segundaDataAte");
 const btnSalvar = document.getElementById("btnSalvar");
 
+const header = document.querySelector('header');
+const page = document.querySelector('main')
+
 //OBJETO QUE SERA MONTADO NA FUNCAO SETDADOS(),COM OS DADOS DA DOM
 var objForms = {}
 
 //FUNCAO QUE PEGA OS VALORES DOS INPUTS E SETA NA VARIAVEL (oBJETO)
+
+const nextpage = () =>{
+  let header2 = document.getElementById('header2');
+  let page2 = document.getElementById('page2');
+    header.classList.toggle('ocultar');
+    page.classList.toggle('ocultar');
+    header2.classList.toggle('ocultar')
+    page2.classList.toggle('ocultar')
+
+}
+
 const setDados = ()=>{
   objForms.nome = inptNome.value;
   objForms.sobreNome=inptSobreNome.value
@@ -28,16 +42,16 @@ const setDados = ()=>{
   objForms.segundaDataMentoria=inptSegundaDataMentoria.value;
   objForms.segundaDataDas=inptSegundaDataDas.value;
   objForms.segundaDataAte=inptSegundaDataAte.value;
+
+  nextpage()
 }
 
 //CRIANDO OS EVENTOS
 btnSalvar.addEventListener("click", () => {
-    //CHAMA A FUNCAO
     setDados();
-    //SETA O DADO NO LOCALSTORAGE
-    //(A FUNCAO RECEBE PRIMEIRO O NOME DA CHAVE Q SERA SALVO O VALOR NO LOCALSTORAGE, SEGUNDO PARAMETRO E O VALOR)
+
     localStorage.setItem("nome",objForms.nome);
-    //PEGA O VALOR SALVO NO LOCAL STORAGE
+
     let nome = localStorage.getItem("nome");
     console.log(objForms);
 })
