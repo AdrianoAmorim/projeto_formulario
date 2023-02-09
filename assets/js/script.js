@@ -39,5 +39,5 @@ btnSalvar.addEventListener("click", () => {
     localStorage.setItem("nome",objForms.nome);
     //PEGA O VALOR SALVO NO LOCAL STORAGE
     let nome = localStorage.getItem("nome");
-    console.log(nome);
+    console.log(objForms);
 })

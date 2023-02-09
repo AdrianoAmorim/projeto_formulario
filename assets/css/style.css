@@ -81,6 +81,7 @@ main {
     max-width: 750px;
     padding: 65px 65px 0 65px;
     border-radius: 20px 20px 0 0;
+    padding-bottom: 20px;
 }
 
 h3 {
@@ -105,7 +106,7 @@ h4 {
     font-size: 1.3rem;
 }
 
-.containerForm__linha {
+hr{
     border: 1px solid var(--border-input);
     margin-top: 8px;
     margin-bottom: 36px;
@@ -202,6 +203,66 @@ p {
     transition: background-color .3s ease-in-out;
 }
 .buttonArea button:hover, .buttonArea button:active{
-    background-color: #f87992 ;
+    background-color: #d1667c ;
     cursor: pointer;
+}
+
+/* Tela de confirmação das infos */
+.ocultar{
+    display: none;
+}
+
+.main2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+h5{
+    color: var(--background-header);
+    font-family: 'Staatliches';
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin: 30px 0 20px 0;
+    border-top: rgba(189, 189, 189, 0.808) 1px solid;
+}
+
+#primeirohr{
+    margin-bottom: 0;
+}
+
+.mentoria--info{
+    color: var(--background-header);
+    font-family: 'Staatliches';
+    font-weight: 400;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.info--flex{
+    display: flex;
+    align-items: center;
+}
+
+#userName, 
+#userEmail, 
+#userSenha,
+#userMentor{
+    margin: 5px 0 0 20px;
+    color: var(--background-header);
+    font-family: 'Gill Sans', 'Calibri', 'Trebuchet MS', sans-serif;
+    border-bottom: 1px solid var(--background-header);
+}
+
+.ment{
+    display: flex;
+    align-items: center;
+}
+
+#das1, #ate1, #das2, #ate2{
+    margin: 5px 0 0 20px;
+    color: var(--background-header);
+    font-family: 'Gill Sans', 'Calibri', 'Trebuchet MS', sans-serif;
 }
