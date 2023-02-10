@@ -269,6 +269,7 @@ h5{
     margin: 5px 0 0 20px;
     color: var(--background-header);
     font-family: 'Gill Sans', 'Calibri', 'Trebuchet MS', sans-serif;
+    border-bottom: 1px solid var(--background-header);
 }
 
 @media screen and (max-width: 768px){
@@ -283,11 +284,14 @@ header{
 .boxHeader h1, .boxHeader p{
     text-align: center;
 }
+#page2{
+    width: 100%;
+}
 
 }
 
 @media screen and (max-width: 500px){
-    
+   
     /*FORMULARIO*/
     .containerForm {
         max-width: 100%;
@@ -295,12 +299,10 @@ header{
     
     h3 {
         font-size: 1.3rem;
-        text-align: center;
     }
     
     h4 {
         font-size: 1.1rem;
-        text-align: center;
     }
     
     hr{
