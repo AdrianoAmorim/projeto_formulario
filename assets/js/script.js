@@ -88,7 +88,6 @@ const getStorage = ()=>{
  let valueReturn = sessionStorage.getItem("obj");
  //faz a conversao novamente para OBJETO
  let obj = JSON.parse(valueReturn);
- console.log(obj.nome);
  
   nomeConfirm.innerHTML = obj.nome + ' ' + obj.sobreNome;
   emailConfirm.innerHTML = obj.email;
