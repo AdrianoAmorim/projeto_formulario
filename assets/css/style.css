@@ -304,6 +304,9 @@ header{
     h4 {
         font-size: 1.1rem;
     }
+    main .containerForm h3, main .containerForm h4{
+        text-align: center !important;
+    }
     
     hr{
         margin-top: 8px;
