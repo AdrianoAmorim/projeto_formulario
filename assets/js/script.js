@@ -11,9 +11,12 @@ const inptSegundaDataMentoria = document.getElementById("segundaDataMentoria");
 const inptSegundaDataDas = document.getElementById("segundaDataDas");
 const inptSegundaDataAte = document.getElementById("segundaDataAte");
 const btnSalvar = document.getElementById("btnSalvar");
-//PEGA AS "PAGINAS" PARA A TROCA DE TELA
-const pgCad =document.getElementById('boxPgCadastro');
+//PEGA AS "PAGINAS" PARA A TROCA DE TELA e ANIMACOES
+const pgCad = document.getElementById('boxPgCadastro');
 const pgConfirm = document.getElementById('boxPgConfirm');
+const containerForm = document.querySelector(".containerForm");
+const buttonArea = document.querySelector(".buttonArea");
+const pageConfirm = document.getElementById("page2");
 //PEGANDO OS ELEMENTOS DA TELA DE CONFIRMACAO
 const nomeConfirm = document.getElementById('userName');
 const emailConfirm = document.getElementById('userEmail');
@@ -32,8 +35,8 @@ var objForm = {}
 const nextpage = () => {
   //CHAMEI AQUI A FUNCAO P PEGA OS VALORES 
   getStorage();
-  pgConfirm.classList.toggle('ocultar');
-  pgCad.classList.toggle('ocultar');
+  animationTela();
+
 
 }
 //FUNCAO QUE PEGA OS VALORES DOS INPUTS E SETA NA VARIAVEL (oBJETO)
@@ -67,28 +70,28 @@ const validarCampos = () => {
 
   });
   //AQUI TESTA SE OS 11 CAMPOS ESTAO PREENCHIDOS, SE ESTIVER SET OS DADOS, SE NAO MANDA O ALERT 
-  if(countInpt == 11){
+  if (countInpt == 11) {
     setDadosObj();
-  }else{
+  } else {
     alert("Porfavor, Preencha todos os Campos!- ;)");
   }
- 
+
 }
 
 //FUNCAO QUE IRA SETAR O OBJETO COM TODAS AS INFORMACOES NO LOCALSTORAGE 
-const setStorage = ()=>{
+const setStorage = () => {
   //a funcao JSON..., e so p tranformar obj em String. 
   // mas a forma de setar os valores no LocalStorage e a mesma
-  sessionStorage.setItem("obj",JSON.stringify(objForm));
+  sessionStorage.setItem("obj", JSON.stringify(objForm));
 }
 
 //FUNCAO QUE PEGA O VALOR DO LOCALSTORAGE
-const getStorage = ()=>{
+const getStorage = () => {
   //pega o valor do localstorage (como string)
- let valueReturn = sessionStorage.getItem("obj");
- //faz a conversao novamente para OBJETO
- let obj = JSON.parse(valueReturn);
- 
+  let valueReturn = sessionStorage.getItem("obj");
+  //faz a conversao novamente para OBJETO
+  let obj = JSON.parse(valueReturn);
+
   nomeConfirm.innerHTML = obj.nome + ' ' + obj.sobreNome;
   emailConfirm.innerHTML = obj.email;
   senhaConfirm.innerHTML = obj.senha;
@@ -98,12 +101,25 @@ const getStorage = ()=>{
   das2Confirm.innerHTML = obj.segundaDataDas;
   ate2Confirm.innerHTML = obj.segundaDataAte;
 }
+//FUNCAO PARA CRIAR AS ANIMACOES ENTRE A TELA DE CADASTRO E CONFIRMACAO
+const animationTela = () => {
+  containerForm.classList.add("outTela");
+  buttonArea.classList.add("outTela");
+  setTimeout(() => {
+    pgConfirm.classList.toggle('ocultar');
+    pgCad.classList.toggle('ocultar');
+  }, 500);
 
+}
 
 //CRIANDO OS EVENTOS
 btnSalvar.addEventListener("click", () => {
   validarCampos();
 })
-btnConfirm.addEventListener("click",()=>{
-  window.location.href = "assets/html/agradecimento.html"
+
+btnConfirm.addEventListener("click", () => {
+  pgConfirm.classList.add("outTela");
+  setTimeout(() => {
+    window.location.href = "assets/html/agradecimento.html";
+  }, 500);
 })

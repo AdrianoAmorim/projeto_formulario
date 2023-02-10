@@ -272,6 +272,47 @@ h5{
     border-bottom: 1px solid var(--background-header);
 }
 
+.fadeIn{
+    animation: fadeIn .4s ease-in forwards;
+}
+.enterTela{
+    animation: enterTela .4s ease-in forwards;
+}
+.outTela{
+    animation: outTela .3s ease-in forwards;
+}
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+        transform: translate(0,-10px);
+    }
+    to{
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
+@keyframes enterTela {
+    from{
+        opacity: 0;
+        transform: translate(-100px,0);
+    }
+    to{
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
+@keyframes outTela {
+    from{
+        opacity: 1;
+        transform: translate(0,0);
+    }
+    to{
+        opacity: 0;
+        transform: translate(-100px,0);
+    }
+}
+
+
 @media screen and (max-width: 768px){
 .containerForm,.buttonArea{
     border-radius: 0;
