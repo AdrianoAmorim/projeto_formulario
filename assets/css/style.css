@@ -272,7 +272,10 @@ h5{
 }
 
 @media screen and (max-width: 768px){
-
+.containerForm,.buttonArea{
+    border-radius: 0;
+    max-width: none;
+}
 header{
     height: 400px;
 }
@@ -287,7 +290,7 @@ header{
     
     /*FORMULARIO*/
     .containerForm {
-        width: 100%;
+        max-width: 100%;
     }
     
     h3 {

@@ -12,9 +12,9 @@ const inptSegundaDataDas = document.getElementById("segundaDataDas");
 const inptSegundaDataAte = document.getElementById("segundaDataAte");
 const btnSalvar = document.getElementById("btnSalvar");
 
-const header = document.querySelector('header');
-const page = document.querySelector('main')
+const pgCad = document.getElementById("boxPgCadastro");
 
+let pgConfirm = document.getElementById('boxPgConfirm');
 //OBJETO QUE SERA MONTADO NA FUNCAO SETDADOS(),COM OS DADOS DA DOM
 var objForms = {}
 
@@ -22,12 +22,8 @@ var objForms = {}
 const nextpage = () => {
   //CHAMEI AQUI A FUNCAO P PEGA OS VALORES 
   getStorage();
-  let header2 = document.getElementById('header2');
-  let page2 = document.getElementById('page2');
-  header.classList.toggle('ocultar');
-  page.classList.toggle('ocultar');
-  header2.classList.toggle('ocultar')
-  page2.classList.toggle('ocultar')
+  pgConfirm.classList.toggle('ocultar');
+  pgCad.classList.toggle('ocultar');
 
 }
 //FUNCAO QUE PEGA OS VALORES DOS INPUTS E SETA NA VARIAVEL (oBJETO)
