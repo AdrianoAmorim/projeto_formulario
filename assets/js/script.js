@@ -11,13 +11,20 @@ const inptSegundaDataMentoria = document.getElementById("segundaDataMentoria");
 const inptSegundaDataDas = document.getElementById("segundaDataDas");
 const inptSegundaDataAte = document.getElementById("segundaDataAte");
 const btnSalvar = document.getElementById("btnSalvar");
-
 const header = document.querySelector('header');
 const page = document.querySelector('main')
+//pegando elementos da Tela Validar informacoes
+const nomeValidInfo = document.getElementById('userName');
+const emailValidInfo = document.getElementById('userEmail');
+const senhaValidInfo = document.getElementById('userSenha');
+const mentorValidInfo = document.getElementById('userMentor');
+const das1ValidInfo = document.getElementById('das1');
+const ate1ValidInfo = document.getElementById('ate1');
+const das2ValidInfo = document.getElementById('das2');
+const ate2ValidInfo = document.getElementById('ate2');
 
 //OBJETO QUE SERA MONTADO NA FUNCAO SETDADOS(),COM OS DADOS DA DOM
 var objForms = {}
-
 
 const nextpage = () => {
   //CHAMEI AQUI A FUNCAO P PEGA OS VALORES 
@@ -79,13 +86,19 @@ const setStorage = ()=>{
 
 //FUNCAO QUE PEGA O VALOR DO LOCALSTORAGE
 const getStorage = ()=>{
-
   //pega o valor do localstorage (como string)
  let valueReturn = localStorage.getItem("obj");
  //faz a conversao novamente para OBJETO
  let obj = JSON.parse(valueReturn);
  //AQUI VC SETA OS VALORES NOS INPUTS COMO SERIA UM RETORNO DE UMA API...
- console.log(obj)
+  nomeValidInfo.innerHTML = obj.nome + ' ' + obj.sobreNome;
+  emailValidInfo.innerHTML = obj.email;
+  senhaValidInfo.innerHTML = obj.senha;
+  mentorValidInfo.innerHTML = obj.mentorNome;
+  das1ValidInfo.innerHTML = obj.dataDas;
+  ate1ValidInfo.innerHTML = obj.dataAte;
+  das2ValidInfo.innerHTML = obj.segundaDataDas;
+  ate1ValidInfo.innerHTML = obj.segundaDataAte;
 }
 
 
