@@ -270,3 +270,90 @@ h5{
     color: var(--background-header);
     font-family: 'Gill Sans', 'Calibri', 'Trebuchet MS', sans-serif;
 }
+
+@media screen and (max-width: 768px){
+
+header{
+    height: 400px;
+}
+
+.boxHeader h1, .boxHeader p{
+    text-align: center;
+}
+
+}
+
+@media screen and (max-width: 500px){
+    
+    /*FORMULARIO*/
+    .containerForm {
+        width: 100%;
+    }
+    
+    h3 {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+    
+    h4 {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+    
+    hr{
+        margin-top: 8px;
+        margin-bottom: 25px;
+    }
+    
+    .containerForm .infoPessoal__nomeComp {
+        display: block;
+    }
+    
+    .legenda {
+        display: none;
+    }
+    
+    p {
+        text-align: center;
+        font-size: 0.9rem;
+    }
+    
+    input{
+        margin-bottom: 20px;
+    }
+    
+    .infoPessoal__nomeComp .infoPessoal__nome {
+        margin-right: 0px;
+    }
+
+    .infoPessoal__email__span, .mentor__span{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .horarios__gridBlock {
+        grid-template-columns: 1fr 1fr 1fr;
+        max-height: 270px;
+        margin-bottom: 40px;
+    }
+    
+    .horarios__gridBlock__data {
+        padding: 10px 30px 0 30px;
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+    
+    .horarios__gridBlock__das{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        
+    }
+    .horarios__gridBlock__ate{
+        grid-column-start: 3;
+        grid-column-end: 4;
+    }
+    
+    .horarios__gridBlock__data--flex {
+        justify-content: center;
+    }
+}
