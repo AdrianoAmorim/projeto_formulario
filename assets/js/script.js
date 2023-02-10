@@ -11,30 +11,17 @@ const inptSegundaDataMentoria = document.getElementById("segundaDataMentoria");
 const inptSegundaDataDas = document.getElementById("segundaDataDas");
 const inptSegundaDataAte = document.getElementById("segundaDataAte");
 const btnSalvar = document.getElementById("btnSalvar");
-const header = document.querySelector('header');
-const page = document.querySelector('main')
-//pegando elementos da Tela Validar informacoes
-const nomeValidInfo = document.getElementById('userName');
-const emailValidInfo = document.getElementById('userEmail');
-const senhaValidInfo = document.getElementById('userSenha');
-const mentorValidInfo = document.getElementById('userMentor');
-const das1ValidInfo = document.getElementById('das1');
-const ate1ValidInfo = document.getElementById('ate1');
-const das2ValidInfo = document.getElementById('das2');
-const ate2ValidInfo = document.getElementById('ate2');
 
+
+let pgConfirm = document.getElementById('boxPgConfirm');
 //OBJETO QUE SERA MONTADO NA FUNCAO SETDADOS(),COM OS DADOS DA DOM
 var objForms = {}
 
 const nextpage = () => {
   //CHAMEI AQUI A FUNCAO P PEGA OS VALORES 
   getStorage();
-  let header2 = document.getElementById('header2');
-  let page2 = document.getElementById('page2');
-  header.classList.toggle('ocultar');
-  page.classList.toggle('ocultar');
-  header2.classList.toggle('ocultar')
-  page2.classList.toggle('ocultar')
+  pgConfirm.classList.toggle('ocultar');
+  pgCad.classList.toggle('ocultar');
 
 }
 //FUNCAO QUE PEGA OS VALORES DOS INPUTS E SETA NA VARIAVEL (oBJETO)
