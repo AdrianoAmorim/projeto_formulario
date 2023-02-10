@@ -1,4 +1,4 @@
-//PEGANDO OS ELEMENTOS
+//PEGANDO OS ELEMENTOS TELA CADASTRO
 const inptNome = document.getElementById("nome");
 const inptSobreNome = document.getElementById("sobreNome");
 const inptEmail = document.getElementById("email");
@@ -11,11 +11,23 @@ const inptSegundaDataMentoria = document.getElementById("segundaDataMentoria");
 const inptSegundaDataDas = document.getElementById("segundaDataDas");
 const inptSegundaDataAte = document.getElementById("segundaDataAte");
 const btnSalvar = document.getElementById("btnSalvar");
+//PEGA AS "PAGINAS" PARA A TROCA DE TELA
+const pgCad =document.getElementById('boxPgCadastro');
+const pgConfirm = document.getElementById('boxPgConfirm');
+//PEGANDO OS ELEMENTOS DA TELA DE CONFIRMACAO
+const nomeConfirm = document.getElementById('userName');
+const emailConfirm = document.getElementById('userEmail');
+const senhaConfirm = document.getElementById('userSenha');
+const mentorConfirm = document.getElementById('userMentor');
+const das1Confirm = document.getElementById('das1');
+const ate1Confirm = document.getElementById('ate1');
+const das2Confirm = document.getElementById('das2');
+const ate2Confirm = document.getElementById('ate2');
+const btnConfirm = document.getElementById('btnConfirm');
 
 
-let pgConfirm = document.getElementById('boxPgConfirm');
 //OBJETO QUE SERA MONTADO NA FUNCAO SETDADOS(),COM OS DADOS DA DOM
-var objForms = {}
+var objForm = {}
 
 const nextpage = () => {
   //CHAMEI AQUI A FUNCAO P PEGA OS VALORES 
@@ -26,24 +38,23 @@ const nextpage = () => {
 }
 //FUNCAO QUE PEGA OS VALORES DOS INPUTS E SETA NA VARIAVEL (oBJETO)
 const setDadosObj = () => {
-  objForms.nome = inptNome.value;
-  objForms.sobreNome = inptSobreNome.value
-  objForms.email = inptEmail.value;
-  objForms.senha = inptSenha.value;
-  objForms.mentorNome = inptMentorName.value;
-  objForms.dataMentoria = inptDataMentoria.value;
-  objForms.dataDas = inptDataDas.value;
-  objForms.dataAte = inptDataAte.value;
-  objForms.segundaDataMentoria = inptSegundaDataMentoria.value;
-  objForms.segundaDataDas = inptSegundaDataDas.value;
-  objForms.segundaDataAte = inptSegundaDataAte.value;
+  objForm.nome = inptNome.value;
+  objForm.sobreNome = inptSobreNome.value
+  objForm.email = inptEmail.value;
+  objForm.senha = inptSenha.value;
+  objForm.mentorNome = inptMentorName.value;
+  objForm.dataMentoria = inptDataMentoria.value;
+  objForm.dataDas = inptDataDas.value;
+  objForm.dataAte = inptDataAte.value;
+  objForm.segundaDataMentoria = inptSegundaDataMentoria.value;
+  objForm.segundaDataDas = inptSegundaDataDas.value;
+  objForm.segundaDataAte = inptSegundaDataAte.value;
   setStorage();
   nextpage();
 }
 const validarCampos = () => {
   //PEGA TODOS OS INPUTS
   let inputs = document.querySelectorAll("input");
-  //USADO PARA CONTROLAR QUANTOS CAMPOS FORAM PREENCHIDOS
   let countInpt = 0;
   //PERCORRE O ARRAY COM TODOS OS INPUTS
   //O FOREACH ELE RECEBE COMO PARAMETRO UM ITEM DE CADA VEZ DO ARRAY.. 
@@ -64,32 +75,36 @@ const validarCampos = () => {
  
 }
 
-//FUNCAO QUE IRAR SETAR O OBJETO COM TODAS AS INFORMACOES NO LOCALSTORAGE 
+//FUNCAO QUE IRA SETAR O OBJETO COM TODAS AS INFORMACOES NO LOCALSTORAGE 
 const setStorage = ()=>{
   //a funcao JSON..., e so p tranformar obj em String. 
   // mas a forma de setar os valores no LocalStorage e a mesma
-  localStorage.setItem("obj",JSON.stringify(objForms));
+  sessionStorage.setItem("obj",JSON.stringify(objForm));
 }
 
 //FUNCAO QUE PEGA O VALOR DO LOCALSTORAGE
 const getStorage = ()=>{
   //pega o valor do localstorage (como string)
- let valueReturn = localStorage.getItem("obj");
+ let valueReturn = sessionStorage.getItem("obj");
  //faz a conversao novamente para OBJETO
  let obj = JSON.parse(valueReturn);
- //AQUI VC SETA OS VALORES NOS INPUTS COMO SERIA UM RETORNO DE UMA API...
-  nomeValidInfo.innerHTML = obj.nome + ' ' + obj.sobreNome;
-  emailValidInfo.innerHTML = obj.email;
-  senhaValidInfo.innerHTML = obj.senha;
-  mentorValidInfo.innerHTML = obj.mentorNome;
-  das1ValidInfo.innerHTML = obj.dataDas;
-  ate1ValidInfo.innerHTML = obj.dataAte;
-  das2ValidInfo.innerHTML = obj.segundaDataDas;
-  ate1ValidInfo.innerHTML = obj.segundaDataAte;
+ console.log(obj.nome);
+ 
+  nomeConfirm.innerHTML = obj.nome + ' ' + obj.sobreNome;
+  emailConfirm.innerHTML = obj.email;
+  senhaConfirm.innerHTML = obj.senha;
+  mentorConfirm.innerHTML = obj.mentorNome;
+  das1Confirm.innerHTML = obj.dataDas;
+  ate1Confirm.innerHTML = obj.dataAte;
+  das2Confirm.innerHTML = obj.segundaDataDas;
+  ate2Confirm.innerHTML = obj.segundaDataAte;
 }
 
 
 //CRIANDO OS EVENTOS
 btnSalvar.addEventListener("click", () => {
   validarCampos();
+})
+btnConfirm.addEventListener("click",()=>{
+  window.location.href = "assets/html/agradecimento.html"
 })
